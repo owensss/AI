@@ -18,10 +18,14 @@ class Vector {
 		Vector<T>  operator+(const Vector<T>& rhs) const ;
 		Vector<T>  operator-(const Vector<T>& rhs) const ;
 		Vector<T>  operator*(T rhs) const ;
+		// dot product
+		T          operator*(Vector<T>& rhs) const;
+		Vector<T>  operator^(Vector<T>& rhs) const ;
 		Vector<T>  operator/(T rhs) const ;
 		Vector<T>& operator+=(const Vector<T>& rhs) ;
 		Vector<T>& operator-=(const Vector<T>& rhs) ;
 		Vector<T>& operator*=(T rhs) ;
+		Vector<T>& operator^=(const Vector<T>& rhs);
 		Vector<T>& operator/=(T rhs) ;
 		// 
 		T          magnitude() const ;
@@ -41,6 +45,8 @@ class Vector {
 		Vector<T>& sub(const Vector<T>& rhs);
 		Vector<T>& mlt(const Vector<T>& rhs);
 		Vector<T>& div(const Vector<T>& rhs);
+		Vector<T>& corssProduct(const Vector<T>& rhs);
+		T          dotProduct(const Vector<T>& rhs) const;
 	private:
 		T x;
 		T y;
